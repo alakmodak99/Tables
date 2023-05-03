@@ -5,7 +5,12 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
-  res.send("Welcome !!");
+  res.send(`Welcome !!
+  
+  routes----> 
+  /parent-data?page=1
+  /child-data/1
+  `);
 });
 app.use("/parent-data", require("./FirstController/index"));
 app.use("/child-data", require("./SecondController/index"));
